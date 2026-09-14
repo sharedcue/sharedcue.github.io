@@ -7,7 +7,9 @@ This repo is the SharedCue website and blog, served at `https://sharedcue.github
 | Home | `/` | `src/pages/index.astro` |
 | Blog post list | `/blog/` | `src/pages/blog/index.astro` |
 | Blog posts | `/blog/<slug>/` | `src/content/blog/<slug>.md` or `.mdx` |
-| Privacy policy | `/privacy/` | `src/pages/privacy.astro` |
+| Privacy policy (App Store / Play privacy URL) | `/privacy/` | `src/pages/privacy.astro` |
+| Support (App Store support URL) | `/support/` | `src/pages/support.astro` |
+| Account deletion (Google Play delete-account URL) | `/delete-account/` | `src/pages/delete-account.astro` |
 
 ## Publish flow (all content)
 

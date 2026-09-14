@@ -1,7 +1,7 @@
 ---
-title: 'Getting started with SharedCue: your first shared list in 5 minutes'
-description: 'A step-by-step, screen-by-screen guide for new SharedCue users: sign up, create a group, add a list and items, and invite the people you live with.'
-pubDate: 'Sep 14 2026'
+title: 'SharedCue features and how to use them'
+description: 'A screen-by-screen guide to every SharedCue feature: groups, lists, items, reminders that repeat, inviting people, the Today view, recent activity, and making the app yours.'
+pubDate: 'Sep 14 2026 10:00'
 ---
 
 import PhoneShots from '../../components/PhoneShots.astro';
@@ -19,10 +19,20 @@ import invite from '../../assets/getting-started/13-invite.png';
 import inviteSent from '../../assets/getting-started/14-invite-sent.png';
 import invitation from '../../assets/getting-started/15-invitation.png';
 import sharedHome from '../../assets/getting-started/16-shared-home.png';
+import activity from '../../assets/getting-started/21-activity.png';
+import profile from '../../assets/getting-started/22-profile.png';
+import repeat from '../../assets/getting-started/23-repeat.png';
+import itemRepeat from '../../assets/getting-started/24-item-repeat.png';
+import today from '../../assets/getting-started/25-today.png';
+import groupMembers from '../../assets/getting-started/26-group-members.png';
+import editList from '../../assets/getting-started/27-edit-list.png';
 
 This guide walks you through SharedCue exactly as you'll see it on your phone.
-By the end, you and one other person will share a grocery list that updates for
-both of you.
+**Steps 1–7** get you set up: by the end, you and one other person will share a
+grocery list that updates for both of you. **Steps 8–12** cover the features you'll
+use every day after that.
+
+New to SharedCue? Start with [What is SharedCue, and how can it help?](/blog/what-is-sharedcue/)
 
 We'll follow **Priya**, who wants to share a *Groceries* list with **Rahul**.
 
@@ -161,6 +171,91 @@ adds, edits, or checks off an item, the other sees it too.
 
 ---
 
+## 8. Reminders that repeat
+
+Some things come back: watering the plants, taking out the trash, paying rent.
+Set them up once.
+
+1. When adding or editing an item, tap **+ Reminder**, pick a day and time, and
+   tap **Set reminder**.
+2. Tap **+ Repeat** and choose **Daily**, **Weekly**, **Monthly** or **Yearly**.
+   For anything else, like every 2 weeks, turn on **Custom repeat**.
+3. Tap **Done**, then **Add item**.
+
+<PhoneShots
+	shots={[
+		{ src: repeat, alt: 'Repeat options: Daily, Weekly, Monthly, Yearly and Custom repeat', caption: 'Pick how often it repeats' },
+		{ src: itemRepeat, alt: 'New item Water the plants with a reminder today at 7:00 PM and Daily repeat', caption: 'The reminder and repeat show on the item' },
+	]}
+/>
+
+When you check off a repeating item, it comes back for the next time on its own.
+
+## 9. See what's due today
+
+Anything with a reminder due today shows up in a **Today** section at the top of
+Home, from all your groups at once. Tap the circle to check it off right there,
+or tap the item to open its list.
+
+<PhoneShots
+	shots={[
+		{ src: today, alt: 'Home screen with a Today section showing Water the plants at 7:00 PM', caption: 'Today, across all your groups' },
+	]}
+/>
+
+## 10. Catch up on what changed
+
+When someone else adds or checks off items, Home shows a **Since you were here**
+card, and the **bell** at the top gets a number. Tap the bell to see exactly what
+changed, in which group and list, and when.
+
+<PhoneShots
+	shots={[
+		{ src: activity, alt: 'Recent activity list: Completed Eggs, Added Bread, New list Groceries', caption: 'Tap the bell for recent activity' },
+	]}
+/>
+
+No more "did you already buy the bread?"
+
+## 11. Manage your group and lists
+
+Tap **Manage *Home* Group** on Home to see everyone in the group and all of its
+lists.
+
+- Tap the **pencil** next to a list to **rename** or **delete** it.
+- Tap the **pencil** at the top right to rename or delete the group itself (only
+  the person who created the group can do this).
+
+<PhoneShots
+	shots={[
+		{ src: groupMembers, alt: 'Group screen listing Priya and Rahul, Add members, and the Groceries and Chores lists', caption: 'Everyone in the group, and its lists' },
+		{ src: editList, alt: 'Edit list sheet with Save changes and Delete list buttons', caption: 'Rename or delete a list' },
+	]}
+/>
+
+## 12. Make it yours
+
+Tap your **initial** in the top-right corner of Home to open your **Profile**.
+There you can:
+
+- change the **name** other people see,
+- pick **your colour**,
+- choose **Light** or **Dark** appearance (or let your phone decide),
+- switch the app's **language**. SharedCue speaks English, Hindi, Bengali, Tamil,
+  Telugu, Marathi, Gujarati, Kannada, Malayalam, Spanish, French, German, Italian,
+  Portuguese and Dutch, and everyone in a group can use their own.
+
+You can also turn on **require unlock**, so the app asks for your fingerprint,
+face or passcode each time it opens.
+
+<PhoneShots
+	shots={[
+		{ src: profile, alt: 'Profile screen with name, colour choices, appearance and language', caption: 'Your name, colour, appearance and language' },
+	]}
+/>
+
+---
+
 ## Quick tips
 
 - **Keep separate groups for separate people.** "Home" for your household,
@@ -171,9 +266,9 @@ adds, edits, or checks off an item, the other sees it too.
 - **Only the person who created a group** can rename or delete it.
 - **No signal? Keep going.** If you see **Waiting**, your changes will send once
   you're back online.
-- **The bell** at the top of Home shows what changed in your shared lists since
-  you last looked.
+- **Tap the name, not the circle, to edit.** Tapping an item's name opens it for
+  editing, so reading a shared list never checks anything off by accident.
 
 **Your first 5 minutes:** create a group for your home, add a *Groceries* list,
 put three real things on it, and invite the person you most often text "can you
-pick up…".
+pick up…". Need ideas? See [5 everyday ways to use SharedCue](/blog/5-ways-to-use-sharedcue/).

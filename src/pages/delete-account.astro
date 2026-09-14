@@ -1,0 +1,74 @@
+---
+// Account deletion page — the "delete account URL" Google Play requires for apps
+// with sign-up. Keep consistent with the Retention and deletion section of privacy.astro.
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { CONTACT_EMAIL } from '../consts';
+
+const subject = encodeURIComponent('Delete my SharedCue account');
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title="Delete your SharedCue account"
+			description="How to request deletion of your SharedCue account and data, what is deleted, and how long it takes."
+		/>
+		<style>
+			main {
+				width: 720px;
+			}
+			h1 {
+				margin-bottom: 0.2em;
+				font-size: 2.2em;
+			}
+			.lede {
+				margin-top: 0;
+				color: rgb(var(--gray));
+			}
+			h2 {
+				margin: 1.6em 0 0.4em;
+				font-size: 1.35em;
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Delete your SharedCue account</h1>
+			<p class="lede">This page explains how to delete your SharedCue account and the data associated with it.</p>
+
+			<h2>How to request deletion</h2>
+			<ol>
+				<li>Email <a href={`mailto:${CONTACT_EMAIL}?subject=${subject}`}>{CONTACT_EMAIL}</a> with the subject <strong>"Delete my SharedCue account"</strong>.</li>
+				<li>Include the <strong>mobile number</strong> you signed in with, including the country code.</li>
+				<li>We'll confirm the request by replying to your email.</li>
+			</ol>
+
+			<h2>What is deleted</h2>
+			<ul>
+				<li>Your account record, including the one-way hash of your phone number and your account identifier.</li>
+				<li>The device keys and push tokens registered for your devices.</li>
+				<li>The encrypted data associated with your account on our servers.</li>
+			</ul>
+
+			<h2>How long it takes</h2>
+			<p>
+				Your account and its data are removed within <strong>30 days</strong> of your request, apart from
+				backups, which expire on their own shortly after.
+			</p>
+
+			<h2>Data on phones</h2>
+			<p>
+				Data stored on your own device is removed when you delete the SharedCue app. Items you shared in a
+				group are visible to the other members of that group, and copies already on their phones stay with
+				them.
+			</p>
+
+			<p>More detail is in our <a href="/privacy/">privacy policy</a>.</p>
+		</main>
+		<Footer />
+	</body>
+</html>

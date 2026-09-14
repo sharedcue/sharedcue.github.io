@@ -1,0 +1,109 @@
+---
+// Support page — the "Support URL" for the App Store and Google Play listings.
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { CONTACT_EMAIL } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="SharedCue Support" description="Get help with SharedCue: guides, common questions, and how to contact us." />
+		<style>
+			main {
+				width: 720px;
+			}
+			h1 {
+				margin-bottom: 0.2em;
+				font-size: 2.2em;
+			}
+			.lede {
+				margin-top: 0;
+				color: rgb(var(--gray));
+			}
+			h2 {
+				margin: 1.6em 0 0.4em;
+				font-size: 1.35em;
+			}
+			h3 {
+				margin: 1.2em 0 0.2em;
+				font-size: 1.05em;
+			}
+			.contact {
+				padding: 1em 1.25em;
+				border-radius: 12px;
+				background: white;
+				box-shadow: var(--box-shadow);
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>SharedCue Support</h1>
+			<p class="lede">Help with setting up and using SharedCue.</p>
+
+			<div class="contact">
+				<strong>Contact us:</strong> <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a><br />
+				Tell us the phone model you're using and what happened, and we'll get back to you.
+			</div>
+
+			<h2>Guides</h2>
+			<ul>
+				<li><a href="/blog/what-is-sharedcue/">What is SharedCue, and how can it help?</a></li>
+				<li><a href="/blog/getting-started-with-sharedcue/">SharedCue features and how to use them</a></li>
+				<li><a href="/blog/5-ways-to-use-sharedcue/">5 everyday ways to use SharedCue</a></li>
+			</ul>
+
+			<h2>Common questions</h2>
+
+			<h3>How do I sign in?</h3>
+			<p>
+				Enter your mobile number and tap <strong>Send code</strong>, then type the 6-digit code from
+				your messages and tap <strong>Verify</strong>. There's no password.
+			</p>
+
+			<h3>I invited someone, but they didn't get the invitation.</h3>
+			<p>
+				The other person needs to install SharedCue and sign up with that exact mobile number first,
+				then you can send the invite again. On their phone, the invitation appears at the top of Home;
+				if it isn't there yet, they can tap the refresh button at the top right.
+			</p>
+
+			<h3>Can I share my Personal group?</h3>
+			<p>
+				No. <strong>Personal</strong> is just for you. To share with someone, create a new group with
+				<strong>+ Add Group</strong> and invite them to it.
+			</p>
+
+			<h3>Why can't I rename or delete a group?</h3>
+			<p>
+				Only the person who created a group can rename or delete it. Anyone in the group can add,
+				edit and check off items, and rename or delete lists.
+			</p>
+
+			<h3>My reminders don't alert me.</h3>
+			<p>
+				Make sure notifications are allowed for SharedCue in your phone's Settings. The reminder time is
+				saved either way.
+			</p>
+
+			<h3>Does SharedCue work offline?</h3>
+			<p>
+				Yes. Keep adding and checking off items; if you see <strong>Waiting</strong>, your changes will
+				send when you're back online.
+			</p>
+
+			<h3>How do I change the app's language?</h3>
+			<p>Tap your initial at the top right of Home to open <strong>Profile</strong>, then tap <strong>Language</strong>.</p>
+
+			<h3>How do I delete my account?</h3>
+			<p>See <a href="/delete-account/">Delete your SharedCue account</a>.</p>
+
+			<h2>Privacy</h2>
+			<p>Read our <a href="/privacy/">privacy policy</a>.</p>
+		</main>
+		<Footer />
+	</body>
+</html>
