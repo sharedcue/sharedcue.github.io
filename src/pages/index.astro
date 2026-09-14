@@ -1,0 +1,199 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import listShot from '../assets/getting-started/10-list-items.png';
+import inviteShot from '../assets/getting-started/15-invitation.png';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const posts = (await getCollection('blog'))
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 3);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			main {
+				width: 960px;
+			}
+			.hero {
+				display: flex;
+				align-items: center;
+				gap: 3em;
+				margin: 2em 0 4em;
+			}
+			.hero-text {
+				flex: 1 1 0;
+			}
+			.hero h1 {
+				margin: 0 0 0.4em;
+				font-size: 2.8em;
+				line-height: 1.1;
+			}
+			.lede {
+				font-size: 1.25em;
+				color: rgb(var(--gray-dark));
+			}
+			.status {
+				display: inline-block;
+				margin-top: 0.5em;
+				padding: 0.35em 0.9em;
+				border-radius: 999px;
+				background: rgb(var(--gray-light));
+				color: rgb(var(--gray-dark));
+				font-size: 0.9em;
+			}
+			.cta {
+				display: inline-block;
+				margin-top: 1.25em;
+				padding: 0.7em 1.3em;
+				border-radius: 10px;
+				background: var(--accent);
+				color: white;
+				text-decoration: none;
+				font-weight: 700;
+			}
+			.cta:hover {
+				background: var(--accent-dark);
+			}
+			.hero-shots {
+				display: flex;
+				gap: 1em;
+				flex: 0 0 auto;
+			}
+			.hero-shots img {
+				width: 190px;
+				height: auto;
+				border-radius: 22px;
+				border: 1px solid rgb(var(--gray-light));
+				box-shadow: var(--box-shadow);
+			}
+			.hero-shots img:last-child {
+				margin-top: 3em;
+			}
+			.features {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 1.5em;
+				margin: 0 0 4em;
+				padding: 0;
+				list-style: none;
+			}
+			.features li {
+				padding: 1.25em;
+				border-radius: 12px;
+				background: white;
+				box-shadow: var(--box-shadow);
+			}
+			.features h3 {
+				margin: 0 0 0.3em;
+				font-size: 1.2em;
+			}
+			.features p {
+				margin: 0;
+				font-size: 0.95em;
+			}
+			.posts h2 {
+				margin-bottom: 0.5em;
+			}
+			.posts ul {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			.posts li {
+				padding: 0.6em 0;
+				border-bottom: 1px solid rgb(var(--gray-light));
+			}
+			.posts li a {
+				text-decoration: none;
+			}
+			.posts .date {
+				display: block;
+				font-size: 0.85em;
+				color: rgb(var(--gray));
+			}
+			@media (max-width: 720px) {
+				.hero {
+					flex-direction: column;
+					text-align: center;
+				}
+				.hero h1 {
+					font-size: 2.1em;
+				}
+				.hero-shots img {
+					width: 140px;
+				}
+				.features {
+					grid-template-columns: 1fr;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section class="hero">
+				<div class="hero-text">
+					<h1>Stop asking. Start noticing.</h1>
+					<p class="lede">
+						SharedCue keeps shared lists for the people you live and plan with: groceries,
+						chores, packing, and the things you look after for family.
+					</p>
+					<p class="status">Now in beta for iPhone and Android</p>
+					<br />
+					<a class="cta" href="/blog/getting-started-with-sharedcue/">See how it works</a>
+				</div>
+				<div class="hero-shots">
+					<Image src={listShot} alt="A shared Groceries list in SharedCue" width={380} />
+					<Image src={inviteShot} alt="An invitation to join a shared group" width={380} />
+				</div>
+			</section>
+
+			<ul class="features">
+				<li>
+					<h3>One list, everyone sees it</h3>
+					<p>
+						Add “coffee” once. Whoever is at the store sees it, checks it off, and it’s done for
+						everyone.
+					</p>
+				</li>
+				<li>
+					<h3>Groups for each circle</h3>
+					<p>Keep “Home”, “Mom &amp; Dad” and “Weekend trip” apart, each with its own people and lists.</p>
+				</li>
+				<li>
+					<h3>Reminders that repeat</h3>
+					<p>Set a time on any item and have it repeat daily, weekly, monthly or yearly.</p>
+				</li>
+				<li>
+					<h3>Private by design</h3>
+					<p>Your lists are end-to-end encrypted. No ads, no tracking. <a href="/privacy/">Read the privacy policy</a>.</p>
+				</li>
+			</ul>
+
+			<section class="posts">
+				<h2>From the blog</h2>
+				<ul>
+					{
+						posts.map((post) => (
+							<li>
+								<a href={`/blog/${post.id}/`}>{post.data.title}</a>
+								<span class="date">
+									<FormattedDate date={post.data.pubDate} />
+								</span>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>

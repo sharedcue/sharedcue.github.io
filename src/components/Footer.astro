@@ -1,0 +1,36 @@
+---
+import { CONTACT_EMAIL } from '../consts';
+
+const today = new Date();
+---
+
+<footer>
+	<p>&copy; {today.getFullYear()} SharedCue</p>
+	<p class="links">
+		<a href="/blog/">Blog</a>
+		<a href="/privacy/">Privacy</a>
+		<a href={`mailto:${CONTACT_EMAIL}`}>Contact</a>
+	</p>
+</footer>
+<style>
+	footer {
+		padding: 2em 1em 6em 1em;
+		background: linear-gradient(var(--gray-gradient)) no-repeat;
+		color: rgb(var(--gray));
+		text-align: center;
+	}
+	p {
+		margin: 0.25em 0;
+	}
+	.links {
+		display: flex;
+		justify-content: center;
+		gap: 1.25em;
+	}
+	.links a {
+		color: rgb(var(--gray));
+	}
+	.links a:hover {
+		color: rgb(var(--gray-dark));
+	}
+</style>

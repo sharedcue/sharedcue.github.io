@@ -1,0 +1,131 @@
+---
+// Privacy policy. Text copied verbatim from the SharedCue/index.html policy page
+// (last updated 8 September 2026) — keep the two in sync if either changes.
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { CONTACT_EMAIL } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title="SharedCue Privacy Policy"
+			description="What SharedCue collects, what never leaves your phone, and what you can do about it."
+		/>
+		<style>
+			main {
+				width: 720px;
+			}
+			h1 {
+				margin-bottom: 0.2em;
+				font-size: 2.2em;
+			}
+			.updated {
+				margin-top: 0;
+				color: rgb(var(--gray));
+			}
+			h2 {
+				margin: 1.6em 0 0.4em;
+				font-size: 1.35em;
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>SharedCue Privacy Policy</h1>
+			<p class="updated">Last updated: 8 September 2026</p>
+
+			<p>
+				SharedCue ("we", "us") is a shared checklist app. It is built to hold as little of your
+				information as it can. This policy explains exactly what reaches our servers, what never
+				leaves your phone, and what you can do about it.
+			</p>
+
+			<h2>What we collect</h2>
+			<ul>
+				<li>
+					<strong>Your phone number, stored only as a one-way hash.</strong> You sign in with your mobile
+					number and a one-time code. Our server keeps a hash of that number, not the number itself, so
+					it can recognise you when you sign in again.
+				</li>
+				<li>
+					<strong>An account identifier.</strong> We assign your account an ID, and register a key and
+					push token for each device you use, so your devices can sync with each other and receive
+					notifications.
+				</li>
+				<li>
+					<strong>Your lists, encrypted.</strong> Your groups, categories and items sync between you and
+					the people you share them with. They are end-to-end encrypted: they pass through our server,
+					but we cannot read them.
+				</li>
+			</ul>
+
+			<h2>What never leaves your phone</h2>
+			<p>
+				Your address book is never uploaded. When SharedCue shows a group member by the name you saved
+				for them, that matching happens entirely on your device. We also do not collect your location,
+				photos, or payment details.
+			</p>
+
+			<h2>What we do not do</h2>
+			<p>
+				SharedCue contains no analytics, advertising or crash-reporting services of any kind. We do not
+				track you across other companies' apps or websites, we do not show ads, and we do not build
+				profiles about you.
+			</p>
+
+			<h2>How we use what we hold</h2>
+			<p>
+				Only to run the app: signing you in, syncing your lists to the people you share them with, and
+				sending reminders and notifications you have asked for.
+			</p>
+
+			<h2>Sharing</h2>
+			<p>
+				Content you put in a shared list is visible to the other members of that list — that is the
+				point of the app. Beyond that, we share data only with the service providers who run our
+				infrastructure, and where the law requires it.
+			</p>
+
+			<h2>Retention and deletion</h2>
+			<p>
+				We keep your account while you use it. You can ask us to delete it by emailing the address below;
+				when you do, your account record and the encrypted data associated with it are removed within 30
+				days, apart from backups that expire on their own shortly after. Data stored on your own device is
+				removed when you delete the app.
+			</p>
+
+			<h2>Security</h2>
+			<p>
+				Your lists are encrypted end-to-end in transit and encrypted at rest on your device. No service
+				can promise perfect security, but the design deliberately limits what we could disclose even if
+				we were compelled to.
+			</p>
+
+			<h2>Children</h2>
+			<p>
+				SharedCue is not directed at children under 13, and we do not knowingly collect their
+				information.
+			</p>
+
+			<h2>Your rights</h2>
+			<p>
+				You can ask us for a copy of what we hold about you, ask us to correct it, or ask us to delete
+				it. Write to the address below and we will respond within a reasonable time.
+			</p>
+
+			<h2>Changes</h2>
+			<p>
+				If this policy changes materially, we will update the date above and, where appropriate, notify
+				you in the app.
+			</p>
+
+			<h2>Contact</h2>
+			<p>Questions about privacy: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></p>
+		</main>
+		<Footer />
+	</body>
+</html>
