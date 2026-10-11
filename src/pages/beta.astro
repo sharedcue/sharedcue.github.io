@@ -1,0 +1,61 @@
+---
+// Beta page — the short link we send Android testers. Forwards straight to the Google Play
+// closed-testing opt-in page, and shows the steps in case the redirect doesn't fire.
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { CONTACT_EMAIL } from '../consts';
+
+const PLAY_TESTING_URL = 'https://play.google.com/apps/testing/com.cognoweavesolution.sharedcue';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="Test SharedCue on Android" description="Join the SharedCue beta on Google Play." />
+		<meta http-equiv="refresh" content={`0; url=${PLAY_TESTING_URL}`} />
+		<meta name="robots" content="noindex" />
+		<style>
+			main {
+				width: 720px;
+			}
+			h1 {
+				margin-bottom: 0.2em;
+				font-size: 2.2em;
+			}
+			.lede {
+				margin-top: 0;
+				color: rgb(var(--gray));
+			}
+			.join {
+				display: inline-block;
+				margin: 0.5em 0 1em;
+				padding: 0.7em 1.4em;
+				border-radius: 12px;
+				background: var(--accent);
+				color: white;
+				font-weight: 700;
+				text-decoration: none;
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Test SharedCue on Android</h1>
+			<p class="lede">Taking you to Google Play…</p>
+
+			<a class="join" href={PLAY_TESTING_URL}>Join the beta</a>
+
+			<ol>
+				<li>Use your Android phone, signed in to Google Play with the Gmail you gave us.</li>
+				<li>Tap <strong>Become a tester</strong>.</li>
+				<li>Tap <strong>Download it on Google Play</strong> and install SharedCue.</li>
+				<li>Please keep it installed for at least 14 days.</li>
+			</ol>
+
+			<p>Questions or feedback: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></p>
+		</main>
+		<Footer />
+	</body>
+</html>
